@@ -1,0 +1,88 @@
+{
+  "name": "multistreaming-app",
+  "version": "0.0.0",
+  "description": "A project to bring justice to the fatherless and plead the case of the widow.",
+  "homepage": "https://multistreaming.app/",
+  "author": {
+    "name": "Aaron Yang (AngelWithAShotgun.gay)",
+    "email": "Aaron@AngelWithAShotgun.gay",
+    "url": "https://angelwithashotgun.gay/"
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension"
+  ],
+  "keywords": [
+    "OBS",
+    "Lovense",
+    "Buttplug",
+    "Webcam",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+    "compatibleRange": "^2.0.0",
+    "dashboardPanels": [
+      {
+        "name": "dashboard",
+        "title": "Dashboard",
+        "file": "dashboard.html",
+        "fullbleed": true,
+        "headerColor": "#525F78"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "index.html",
+        "width": 1920,
+        "height": 1080,
+        "singleInstance": false
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.5%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs --all",
+    "build:extension": "node scripts/build.mjs --extension",
+    "watch": "node scripts/build.mjs --all --watch",
+    "watch:browser": "node scripts/build.mjs --dashboard --graphics --watch",
+    "watch:schemas": "node scripts/build.mjs --schemas --watch",
+    "dev": "concurrently --kill-others \"npm run watch:schemas\" \"npm run watch:browser\" \"nodemon\"",
+    "generate-schema-types": "trash src/types/schemas && nodecg schema-types"
+  },
+  "dependencies": {
+    "@types/react": "*",
+    "@types/react-dom": "*",
+    "react": "*",
+    "react-dom": "*",
+    "ts-node": "*"
+  },
+  "devDependencies": {
+    "@nodecg/types": "^2.0.0",
+    "@parcel/config-default": "*",
+    "@parcel/core": "*",
+    "@parcel/reporter-cli": "*",
+    "@parcel/validator-typescript": "*",
+    "@types/node": "^18",
+    "concurrently": "*",
+    "glob": "^10.2.7",
+    "nodecg": "^2.5.3",
+    "nodemon": "*",
+    "trash-cli": "*",
+    "typescript": "^5.8.3"
+  },
+  "repository": "git@github.com:zyang01/multistreaming-app.git",
+  "license": "MIT"
+}
