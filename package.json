@@ -63,10 +63,16 @@
     "generate-schema-types": "trash src/types/schemas && nodecg schema-types"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@fontsource/roboto": "^5.2.6",
+    "@mui/icons-material": "^7.1.1",
+    "@mui/material": "^7.1.1",
     "@types/react": "*",
     "@types/react-dom": "*",
     "react": "*",
     "react-dom": "*",
+    "selenium-webdriver": "^4.33.0",
     "ts-node": "*"
   },
   "devDependencies": {
@@ -76,6 +82,7 @@
     "@parcel/reporter-cli": "*",
     "@parcel/validator-typescript": "*",
     "@types/node": "^18",
+    "@types/selenium-webdriver": "^4.1.28",
     "concurrently": "*",
     "glob": "^10.2.7",
     "nodecg": "^2.5.3",

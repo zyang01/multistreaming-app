@@ -1,0 +1,22 @@
+services:
+  nodecg:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${NODECG_PORT:-9090}:9090"
+    restart: unless-stopped
+  chromium:
+    image: selenium/standalone-chromium:latest
+    shm_size: 2gb
+    volumes:
+      - browser_data:/home/seluser/.cache
+    depends_on:
+      - nodecg
+    ports:
+      - "4444:4444"
+      - "${NOVNC_PORT:-7900}:7900"
+    restart: unless-stopped
+
+volumes:
+  browser_data:
